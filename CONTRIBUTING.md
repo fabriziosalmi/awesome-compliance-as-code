@@ -12,7 +12,7 @@ Contributions to `awesome-compliance-as-code` are welcome and enforced through a
 
 3. **Project Maturity and Maintenance**
    - Public source repository with documented installation and quickstart instructions.
-   - Active maintenance (commits within the last 180 days for tools, or active working group status for formal specifications).
+   - Active maintenance (commits within the last 540 days / 18 months, enforced automatically by `scripts/check_repo_health.py`).
    - Unarchived repository status on GitHub, GitLab, or equivalent forge.
 
 4. **Neutral, Factual Descriptions**

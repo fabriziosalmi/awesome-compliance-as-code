@@ -11,8 +11,8 @@ This document tracks the engineering milestones for `awesome-compliance-as-code`
 
 ## Milestone 2: Scoped Catalog Expansion and Regulatory-to-Code Matrix (Done)
 
-- [x] Populate 9 core engineering sections and 25 scoped subsections with **224 verified open-source tools, specifications, and policy packs**.
-- [x] Verify all 224 GitHub repositories via the GitHub API (`0` archived, `0` inactive > 540 days, `0` HTTP 404/broken links across all 228 URLs) and confirm exact SPDX license identifiers.
+- [x] Populate 9 core engineering sections and 25 scoped subsections with **323 verified open-source tools, specifications, and policy packs**.
+- [x] Verify all 323 GitHub repositories via the GitHub API (`0` archived, `0` inactive > 540 days, `0` HTTP 404/broken links across all 327 URLs) and confirm exact SPDX license identifiers.
 - [x] Build the Regulatory-to-Code Mapping Matrix covering EU Cyber Resilience Act (CRA), NIS2, DORA, EU AI Act, GDPR, PCI-DSS v4.0, NIST SP 800-53 Rev. 5, and ISO/IEC 42001.
 - [x] Pass all 11 unit/break tests and all 36 `lgit check .` project-hygiene gates with `0` findings.
 
