@@ -34,4 +34,4 @@ This document tracks the engineering milestones for `awesome-compliance-as-code`
 ## Milestone 5: Final Audit and Public Launch (`v1.0.0`)
 
 - [x] Run end-to-end audit (`validate_readme.py`, `unittest`, `lgit`, `slopless`, live HTTP link check).
-- [ ] Switch repository visibility to public, configure repository metadata and topics, and cut release `v1.0.0`.
+- [x] Switch repository visibility to public, configure repository metadata and topics, and cut release `v1.0.0`.
