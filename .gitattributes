@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.md text diff=markdown
+*.py text diff=python
+*.rego text
+*.yaml text
+*.yml text
+*.json text
+*.sql text
+*.svg text

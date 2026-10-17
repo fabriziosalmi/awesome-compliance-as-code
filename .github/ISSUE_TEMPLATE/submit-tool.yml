@@ -1,0 +1,66 @@
+name: Submit Compliance-as-Code Tool or Specification
+description: Propose an open-source tool, engine, scanner, or machine-readable specification.
+title: "[Tool]: "
+labels: ["addition", "triage"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Project Name
+      placeholder: e.g., Open Policy Agent
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Repository or Specification URL (HTTPS)
+      placeholder: https://github.com/open-policy-agent/opa
+    validations:
+      required: true
+  - type: dropdown
+    id: section
+    attributes:
+      label: Target Catalog Section
+      options:
+        - 1. Machine-Readable Formats & Data Protocols
+        - 2. Policy-as-Code (PaC) Engines & Domain Languages
+        - 3. Infrastructure-as-Code (IaC) & Static Config Auditing
+        - 4. Software Supply Chain & Artifact Integrity
+        - 5. Host, Kernel & Runtime Hardening
+        - 6. Automated Evidence Gathering & Cloud Posture
+        - 7. AI/ML Compliance & Model Governance
+        - 8. Pre-Built Policy Packs & Mappings
+        - 9. Educational & Reference Architectures
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: SPDX License Identifier
+      placeholder: e.g., Apache-2.0, MIT, MPL-2.0
+    validations:
+      required: true
+  - type: input
+    id: tags
+    attributes:
+      label: Regulatory Tags
+      description: Use one or more tags from CONTRIBUTING.md (e.g., [EU-CRA], [NIS2], [DORA], [EU-AI-Act], [Multi-Framework]).
+      placeholder: "[EU-CRA] [NIS2]"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Neutral Technical Description (Max 2 Sentences)
+      description: Describe what the tool does technically without promotional language.
+    validations:
+      required: true
+  - type: checkboxes
+    id: requirements
+    attributes:
+      label: Gatekeeping Verification
+      options:
+        - label: This is an executable software tool or formal machine-readable specification (no slide-ware or closed SaaS).
+          required: true
+        - label: The project is open-source or provides a free self-hostable CLI/engine, with commits in the last 180 days.
+          required: true

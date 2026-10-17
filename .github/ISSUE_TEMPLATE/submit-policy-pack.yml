@@ -1,0 +1,53 @@
+name: Submit Regulatory Policy Pack
+description: Propose a pre-built, open-source policy pack (Rego, Kyverno, Cedar, Semgrep, InSpec, OSCAL) mapped to a regulation.
+title: "[Policy Pack]: "
+labels: ["policy-pack", "triage"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Policy Pack Name
+      placeholder: e.g., NIST OSCAL Content Repository
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Repository URL (HTTPS)
+      placeholder: https://github.com/usnistgov/oscal-content
+    validations:
+      required: true
+  - type: input
+    id: engine
+    attributes:
+      label: Target Engine or Format
+      placeholder: e.g., OPA/Rego, Kyverno, InSpec, OSCAL, Steampipe
+    validations:
+      required: true
+  - type: input
+    id: regulation
+    attributes:
+      label: Regulatory Standard and Specific Articles/Controls Covered
+      placeholder: e.g., NIS2 Art. 21(2)(d), DORA Art. 9, NIST SP 800-53 Rev. 5
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: SPDX License Identifier
+      placeholder: e.g., CC0-1.0, Apache-2.0, MIT
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Neutral Technical Description (Max 2 Sentences)
+    validations:
+      required: true
+  - type: checkboxes
+    id: requirements
+    attributes:
+      label: Verification
+      options:
+        - label: The repository contains machine-executable policy rules or formal control catalogs (not PDF/Excel checklists).
+          required: true

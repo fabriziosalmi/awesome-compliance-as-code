@@ -1,0 +1,33 @@
+{
+  "component-definition": {
+    "uuid": "8c504b8e-4f1a-4b0c-9a6d-12e4f8c90123",
+    "metadata": {
+      "title": "Payments API Service Component Definition",
+      "last-modified": "2026-10-17T12:00:00Z",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2"
+    },
+    "components": [
+      {
+        "uuid": "d2f9a110-7c4b-4e89-8f12-9b0012345678",
+        "type": "software",
+        "title": "payments-api",
+        "description": "Core payment processing service with automated SBOM and non-root execution gates.",
+        "control-implementations": [
+          {
+            "uuid": "f1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c",
+            "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+            "description": "NIST SP 800-53 Rev. 5 and EU CRA technical control mappings.",
+            "implemented-requirements": [
+              {
+                "uuid": "a0b1c2d3-e4f5-4a6b-8c7d-9e0f1a2b3c4d",
+                "control-id": "ac-6",
+                "description": "Enforces least privilege via non-root container execution validated by OPA policy compliance.cra.workloads."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

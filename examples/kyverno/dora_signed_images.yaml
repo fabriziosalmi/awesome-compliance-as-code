@@ -1,0 +1,42 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: dora-require-signed-images-and-non-privileged
+  annotations:
+    policies.kyverno.io/title: DORA ICT Artifact and Runtime Integrity Gate
+    policies.kyverno.io/category: Regulatory Compliance
+    policies.kyverno.io/severity: high
+    policies.kyverno.io/subject: Pod
+spec:
+  validationFailureAction: Enforce
+  background: true
+  rules:
+    - name: verify-sigstore-keyless-attestation
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      verifyImages:
+        - imageReferences:
+            - "ghcr.io/enterprise-org/*"
+          attestors:
+            - entries:
+                - keyless:
+                    issuer: "https://token.actions.githubusercontent.com"
+                    subject: "https://github.com/enterprise-org/*"
+                    rekor:
+                      url: "https://rekor.sigstore.dev"
+    - name: forbid-privileged-containers
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        message: "DORA Art. 9 violation: privileged containers are prohibited in production namespaces."
+        pattern:
+          spec:
+            containers:
+              - =(securityContext):
+                  =(privileged): false
