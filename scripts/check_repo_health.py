@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit GitHub repositories listed in README.md for archive status or inactivity."""
+"""Audit GitHub repositories listed in README.md for archive status, renames, license drift, or inactivity."""
 
 from __future__ import annotations
 
@@ -15,12 +15,14 @@ import urllib.request
 
 ROOT_DIR = pathlib.Path(__file__).resolve().parent.parent
 README_PATH = ROOT_DIR / "README.md"
-GITHUB_REPO_REGEX = re.compile(r"https://github\.com/([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+?)(?:\)|/|\s|$)")
+ENTRY_REPO_REGEX = re.compile(
+    r"^- \[[^\]]+\]\(https://github\.com/(?P<slug>[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)\) - .+ `(?P<license>[^`]+)`$"
+)
 STALE_DAYS_THRESHOLD = 540
 
 
-def check_repo(slug: str, token: str | None) -> str | None:
-    """Return an issue description if the repository is archived or stale, else None."""
+def check_repo(slug: str, declared_license: str, token: str | None) -> str | None:
+    """Return an issue description if the repository is archived, renamed, license-mismatched, or stale."""
     api_url = f"https://api.github.com/repos/{slug}"
     headers = {
         "Accept": "application/vnd.github+json",
@@ -40,8 +42,17 @@ def check_repo(slug: str, token: str | None) -> str | None:
     except Exception:  # noqa: BLE001
         return None
 
+    full_name = data.get("full_name")
+    if full_name and full_name.lower() != slug.lower():
+        return f"- [RENAMED] `{slug}` redirected to `{full_name}`"
+
     if data.get("archived"):
         return f"- [ARCHIVED] `{slug}`"
+
+    lic_info = data.get("license")
+    api_spdx = lic_info.get("spdx_id") if isinstance(lic_info, dict) else None
+    if api_spdx and api_spdx != "NOASSERTION" and api_spdx != declared_license:
+        return f"- [LICENSE DRIFT] `{slug}` declares `{declared_license}`, GitHub API reports `{api_spdx}`"
 
     pushed_at = data.get("pushed_at")
     if pushed_at:
@@ -54,31 +65,32 @@ def check_repo(slug: str, token: str | None) -> str | None:
 
 def main() -> int:
     content = README_PATH.read_text(encoding="utf-8")
-    raw_slugs = set(GITHUB_REPO_REGEX.findall(content))
-    slugs = sorted(
-        s.removesuffix(".git")
-        for s in raw_slugs
-        if not s.startswith("fabriziosalmi/awesome-compliance-as-code")
-        and not s.startswith("sindresorhus/")
-    )
+    repo_entries: list[tuple[str, str]] = []
+    for line in content.splitlines():
+        match = ENTRY_REPO_REGEX.match(line)
+        if match:
+            repo_entries.append((match.group("slug"), match.group("license")))
+
     token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
 
-    print(f"Auditing {len(slugs)} GitHub repositories for archive status and freshness...")
+    print(
+        f"Auditing {len(repo_entries)} GitHub repositories for archive status, renames, license accuracy, and freshness..."
+    )
     findings: list[str] = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:
-        results = pool.map(lambda s: check_repo(s, token), slugs)
+        results = pool.map(lambda item: check_repo(item[0], item[1], token), repo_entries)
         for finding in results:
             if finding:
                 findings.append(finding)
                 print(f"  WARN {finding}", file=sys.stderr)
 
     if findings:
-        print(f"Found {len(findings)} archived or stale repository entry/entries:", file=sys.stderr)
+        print(f"Found {len(findings)} repository health issue(s):", file=sys.stderr)
         for item in findings:
             print(f"  {item}", file=sys.stderr)
         return 1
 
-    print(f"OK: all {len(slugs)} GitHub repositories are active and unarchived.")
+    print(f"OK: all {len(repo_entries)} GitHub repositories are active, unarchived, canonical, and license-verified.")
     return 0
 
 

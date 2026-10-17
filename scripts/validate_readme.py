@@ -36,23 +36,24 @@ ALLOWED_LICENSES = frozenset(
     {
         "Apache-2.0",
         "MIT",
+        "MIT-0",
         "GPL-2.0",
         "GPL-3.0",
         "AGPL-3.0",
         "LGPL-2.1",
         "LGPL-3.0",
         "MPL-2.0",
+        "CPAL-1.0",
         "BSD-2-Clause",
         "BSD-3-Clause",
         "CC0-1.0",
         "CC-BY-4.0",
         "CC-BY-SA-4.0",
+        "Community-Spec-1.0",
         "ISC",
         "EPL-2.0",
         "UPL-1.0",
         "Public-Domain",
-        "BUSL-1.1",
-        "ELv2",
     }
 )
 
@@ -132,7 +133,7 @@ def validate_markdown_text(
     content: str,
     *,
     examples_dir: pathlib.Path | None = EXAMPLES_DIR,
-    min_entries: int = 300,
+    min_entries: int = 340,
 ) -> list[ValidationError]:
     """Validate README.md content and return a list of structural or policy errors."""
     errors: list[ValidationError] = []

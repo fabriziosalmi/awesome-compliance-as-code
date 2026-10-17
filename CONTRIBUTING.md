@@ -7,8 +7,8 @@ Contributions to `awesome-compliance-as-code` are welcome and enforced through a
 1. **Executable Code or Formal Specification Only (No Slide-Ware)**
    Every entry must be an executable software tool (CLI, library, policy engine, Kubernetes operator, runtime sensor), a machine-readable specification (JSON, YAML, XML, or Protobuf schema), or an open-source technical reference containing executable artifacts. Links to consultancy websites, gated PDF whitepapers, webinars, marketing landing pages, or manual spreadsheet checklists are rejected.
 
-2. **Open Source or Verifiably Self-Hostable**
-   Resources must be distributed under an approved open-source or public-domain license, or a source-available license with a fully functional, free, self-hostable CLI or community engine. Closed-box SaaS products whose primary call to action is "Book a Demo" are excluded.
+2. **Open Source or Open Standard Only**
+   Resources must be distributed under an approved OSI open-source license, Creative Commons / Community Specification license, or public-domain dedication. Proprietary, closed-box SaaS products and source-available licenses (`BUSL-1.1`, `ELv2`, `SSPL-1.0`) are excluded.
 
 3. **Project Maturity and Maintenance**
    - Public source repository with documented installation and quickstart instructions.
@@ -62,11 +62,10 @@ Every entry must include at least one regulatory or standard tag from the contro
 
 Every entry must conclude with an approved SPDX license identifier (or `Public-Domain`) wrapped in backticks:
 
-- `Apache-2.0`, `MIT`, `BSD-2-Clause`, `BSD-3-Clause`, `ISC`
-- `MPL-2.0`, `EPL-2.0`, `UPL-1.0`
+- `Apache-2.0`, `MIT`, `MIT-0`, `BSD-2-Clause`, `BSD-3-Clause`, `ISC`
+- `MPL-2.0`, `EPL-2.0`, `UPL-1.0`, `CPAL-1.0`
 - `GPL-2.0`, `GPL-3.0`, `AGPL-3.0`, `LGPL-2.1`, `LGPL-3.0`
-- `CC0-1.0`, `CC-BY-4.0`, `CC-BY-SA-4.0`, `Public-Domain`
-- `ELv2`, `BUSL-1.1` (only for source-available tools with a free, self-hostable CLI/engine)
+- `CC0-1.0`, `CC-BY-4.0`, `CC-BY-SA-4.0`, `Community-Spec-1.0`, `Public-Domain`
 
 ## Alphabetical Ordering
 

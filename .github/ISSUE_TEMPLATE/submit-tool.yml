@@ -62,5 +62,5 @@ body:
       options:
         - label: This is an executable software tool or formal machine-readable specification (no slide-ware or closed SaaS).
           required: true
-        - label: The project is open-source or provides a free self-hostable CLI/engine, with commits in the last 540 days.
+        - label: The project is distributed under an approved open-source or open-specification license, with commits in the last 540 days.
           required: true

@@ -45,6 +45,8 @@ Compliance-as-Code translates statutory regulations, security baselines, and ind
   - [Kubernetes, OPA & Kyverno Policy Libraries](#kubernetes-opa--kyverno-policy-libraries)
   - [Host, Edge & Cloud Hardening Baselines](#host-edge--cloud-hardening-baselines)
 - [9. Educational & Reference Architectures](#9-educational--reference-architectures)
+  - [Supply-Chain & Open-Source Security Frameworks](#supply-chain--open-source-security-frameworks)
+  - [Cloud, GitOps & AI Governance Blueprints](#cloud-gitops--ai-governance-blueprints)
 - [Regulatory-to-Code Mapping Matrix](#regulatory-to-code-mapping-matrix)
 - [Reference Implementations](#reference-implementations)
 - [Contributing](#contributing)
@@ -57,29 +59,32 @@ Serializable schemas (JSON, YAML, XML, Protobuf) that replace ambiguous natural-
 ### Control & Assessment Schemas
 
 - [CloudEvents Specification](https://github.com/cloudevents/spec) - CNCF specification for describing event data in a common, interoperable format across security telemetry and compliance automation pipelines. `[DORA]` `[Multi-Framework]` `Apache-2.0`
-- [Common Cloud Controls (FINOS CCC)](https://github.com/finos/common-cloud-controls) - Open standard maintained by FINOS describing consistent cyber, operational, and resiliency controls for financial-sector cloud deployments. `[DORA]` `[SOC2/ISO27001]` `CC-BY-4.0`
+- [Common Cloud Controls (FINOS CCC)](https://github.com/finos/common-cloud-controls) - Open standard maintained by FINOS describing consistent cyber, operational, and resiliency controls for financial-sector cloud deployments. `[DORA]` `[SOC2/ISO27001]` `Community-Spec-1.0`
 - [NIST OSCAL (Open Security Controls Assessment Language)](https://github.com/usnistgov/OSCAL) - Standardized XML, JSON, and YAML schemas developed by NIST for expressing control catalogs, baselines, System Security Plans (SSP), and assessment results. `[NIST-800-53]` `[Multi-Framework]` `Public-Domain`
 - [OCI Distribution Specification](https://github.com/opencontainers/distribution-spec) - Open Container Initiative API standard for distributing container images, SBOMs, and cryptographic referrers across registries. `[EU-CRA]` `[SLSA]` `Apache-2.0`
 - [OCI Image Specification](https://github.com/opencontainers/image-spec) - Open Container Initiative schema defining interoperable container image manifests, filesystem layers, and cryptographic configuration annotations. `[EU-CRA]` `[CIS]` `Apache-2.0`
 - [OCI Runtime Specification](https://github.com/opencontainers/runtime-spec) - Open Container Initiative specification governing container execution state, Linux namespaces, cgroups, and seccomp security boundaries. `[CIS]` `[NIS2]` `Apache-2.0`
+- [OpenSSF Security Insights Specification](https://github.com/ossf/security-insights) - Machine-readable YAML schema enabling software projects to publish verifiable attestations of their security governance, vulnerability reporting, and build controls. `[EU-CRA]` `[SLSA]` `Community-Spec-1.0`
 - [OpenTelemetry Semantic Conventions](https://github.com/open-telemetry/semantic-conventions) - Standardized attribute naming and schema definitions for logs, traces, and audit events across distributed systems. `[DORA]` `[SOC2/ISO27001]` `Apache-2.0`
 
 ### Software Bill of Materials (SBOM, CBOM, SaaSBOM, HBOM)
 
 - [CycloneDX Property Taxonomy](https://github.com/CycloneDX/cyclonedx-property-taxonomy) - Official namespace and property taxonomy extending CycloneDX SBOMs with standardized security, AI, and cryptographic metadata fields. `[EU-CRA]` `[NIS2]` `Apache-2.0`
 - [CycloneDX Specification](https://github.com/CycloneDX/specification) - OWASP standard for Software, Hardware, Cryptography, and SaaS Bills of Materials (SBOM, HBOM, CBOM, SaaSBOM) with formal vulnerability and compliance attestations. `[EU-CRA]` `[NIS2]` `Apache-2.0`
-- [OmniBOR Specification](https://github.com/omnibor/spec) - Minimalist artifact identity specification constructing reproducible content-addressable dependency graphs across software build trees. `[EU-CRA]` `[SLSA]` `Apache-2.0`
+- [CycloneDX Transparency Exchange API (TEA)](https://github.com/CycloneDX/transparency-exchange-api) - Standard REST API specification for automated discovery and exchange of SBOM, CBOM, VEX, and compliance attestations across supply-chain participants. `[EU-CRA]` `[NIS2]` `Apache-2.0`
+- [OmniBOR Specification](https://github.com/omnibor/spec) - Minimalist artifact identity specification constructing reproducible content-addressable dependency graphs across software build trees. `[EU-CRA]` `[SLSA]` `Community-Spec-1.0`
 - [Package URL (purl) Specification](https://github.com/package-url/purl-spec) - Universal, URI-based identifier standard for referencing software packages reliably across package managers, SBOM formats, and vulnerability databases. `[EU-CRA]` `[Multi-Framework]` `MIT`
-- [SPDX (Software Package Data Exchange)](https://github.com/spdx/spdx-spec) - ISO/IEC 5962:2021 open standard for communicating software bill of materials components, licenses, copyrights, and security references. `[EU-CRA]` `[NIS2]` `CC-BY-4.0`
-- [SPDX 3.0 Model](https://github.com/spdx/spdx-3-model) - Next-iteration domain model for the SPDX standard introducing dedicated profiles for software, AI datasets, build provenance, and licensing. `[EU-CRA]` `[EU-AI-Act]` `CC-BY-4.0`
+- [SPDX (Software Package Data Exchange)](https://github.com/spdx/spdx-spec) - ISO/IEC 5962:2021 open standard for communicating software bill of materials components, licenses, copyrights, and security references. `[EU-CRA]` `[NIS2]` `Community-Spec-1.0`
+- [SPDX 3.0 Model](https://github.com/spdx/spdx-3-model) - Next-iteration domain model for the SPDX standard introducing dedicated profiles for software, AI datasets, build provenance, and licensing. `[EU-CRA]` `[EU-AI-Act]` `Community-Spec-1.0`
 - [SPDX License List XML](https://github.com/spdx/license-list-XML) - Canonical XML dataset of open-source licenses and exceptions backing SPDX license identifiers across compliance scanners. `[EU-CRA]` `[Multi-Framework]` `CC0-1.0`
 
 ### Vulnerability, Advisory & Exploitability Formats
 
+- [CISA Known Exploited Vulnerabilities (KEV) Catalog](https://github.com/cisagov/kev-data) - Machine-readable JSON and CSV feed maintained by CISA cataloging vulnerabilities actively exploited in the wild for mandatory remediation prioritization. `[EU-CRA]` `[NIS2]` `CC0-1.0`
 - [CSAF (Common Security Advisory Framework)](https://github.com/oasis-tcs/csaf) - OASIS standard for publishing and consuming machine-readable security advisories and vulnerability disclosures across software supply chains. `[EU-CRA]` `[NIS2]` `BSD-3-Clause`
 - [CVE JSON Record Format Schema](https://github.com/CVEProject/cve-schema) - Official JSON Schema specification for Common Vulnerabilities and Exposures (CVE) v5 records, CVSS vectors, and CWE problem types. `[EU-CRA]` `[NIS2]` `CC0-1.0`
 - [OpenSSF Malicious Packages OSV Dataset](https://github.com/ossf/malicious-packages) - Curated collection of Open Source Vulnerability (OSV) reports tracking confirmed malicious packages across npm, PyPI, RubyGems, and Crates.io. `[EU-CRA]` `[NIS2]` `Apache-2.0`
-- [OpenVEX](https://github.com/openvex/spec) - Minimal, interoperable Vulnerability Exploitability eXchange specification for attesting whether a vulnerability listed in an SBOM is exploitable in practice. `[EU-CRA]` `[NIS2]` `Apache-2.0`
+- [OpenVEX](https://github.com/openvex/spec) - Minimal, interoperable Vulnerability Exploitability eXchange specification for attesting whether a vulnerability listed in an SBOM is exploitable in practice. `[EU-CRA]` `[NIS2]` `CC0-1.0`
 - [OSV Schema (Open Source Vulnerability)](https://github.com/ossf/osv-schema) - OpenSSF JSON schema for describing vulnerabilities precisely across open-source ecosystems and commit ranges. `[EU-CRA]` `[NIS2]` `Apache-2.0`
 - [SARIF (Static Analysis Results Interchange Format)](https://github.com/oasis-tcs/sarif-spec) - OASIS JSON standard unifying the output of static analysis and compliance scanners across CI/CD systems. `[Multi-Framework]` `BSD-3-Clause`
 - [STIX 2.1 Specification (OASIS CTI)](https://github.com/oasis-tcs/cti-stix2) - Structured Threat Information Expression JSON schema for exchanging cyber threat intelligence and vulnerability indicators. `[NIS2]` `[DORA]` `BSD-3-Clause`
@@ -90,8 +95,8 @@ Serializable schemas (JSON, YAML, XML, Protobuf) that replace ambiguous natural-
 - [IETF SCITT Architecture](https://github.com/ietf-wg-scitt/draft-ietf-scitt-architecture) - IETF Supply Chain Integrity, Transparency, and Trust working group specification for append-only transparency services and signed receipts. `[EU-CRA]` `[SLSA]` `BSD-2-Clause`
 - [in-toto Attestation Framework](https://github.com/in-toto/attestation) - Vendor-neutral specifications and schemas for cryptographically verifiable software supply-chain step metadata and predicates. `[EU-CRA]` `[SLSA]` `Apache-2.0`
 - [Sigstore Protobuf Specs](https://github.com/sigstore/protobuf-specs) - Protocol Buffer and JSON schema definitions for Sigstore cryptographic bundles, verification material, and transparency log entries. `[EU-CRA]` `[SLSA]` `Apache-2.0`
-- [SLSA (Supply-chain Levels for Software Artifacts)](https://github.com/slsa-framework/slsa) - Security framework and provenance specification defining verifiable build integrity levels for software artifacts. `[SLSA]` `[EU-CRA]` `Apache-2.0`
-- [Uptane Standard](https://github.com/uptane/uptane-standard) - Compromise-resilient software update security framework designed for automotive, embedded, and IoT systems subject to statutory safety rules. `[EU-CRA]` `[NIS2]` `Apache-2.0`
+- [SLSA (Supply-chain Levels for Software Artifacts)](https://github.com/slsa-framework/slsa) - Security framework and provenance specification defining verifiable build integrity levels for software artifacts. `[SLSA]` `[EU-CRA]` `Community-Spec-1.0`
+- [Uptane Standard](https://github.com/uptane/uptane-standard) - Compromise-resilient software update security framework designed for automotive, embedded, and IoT systems subject to statutory safety rules. `[EU-CRA]` `[NIS2]` `Community-Spec-1.0`
 
 ## 2. Policy-as-Code (PaC) Engines & Domain Languages
 
@@ -142,12 +147,13 @@ Static analyzers that inspect declarative infrastructure templates, container ma
 
 ### Multi-Cloud & Terraform Scanners
 
-- [cfn-lint (CloudFormation Linter)](https://github.com/aws-cloudformation/cfn-lint) - Static validator for AWS CloudFormation JSON and YAML templates checking resource properties against the AWS specification and custom policy rules. `[CIS]` `[SOC2/ISO27001]` `MIT`
+- [cfn-lint (CloudFormation Linter)](https://github.com/aws-cloudformation/cfn-lint) - Static validator for AWS CloudFormation JSON and YAML templates checking resource properties against the AWS specification and custom policy rules. `[CIS]` `[SOC2/ISO27001]` `MIT-0`
 - [Checkov](https://github.com/bridgecrewio/checkov) - Graph-based static analysis scanner for Terraform, OpenTofu, CloudFormation, Kubernetes, Helm, and Bicep with built-in CIS and regulatory control mappings. `[CIS]` `[SOC2/ISO27001]` `Apache-2.0`
 - [CloudFormation Guard (cfn-guard)](https://github.com/aws-cloudformation/cloudformation-guard) - Rust-based Policy-as-Code DSL and CLI validator for checking CloudFormation templates, Terraform JSON plans, and Kubernetes manifests against compliance rules. `[CIS]` `[NIST-800-53]` `Apache-2.0`
 - [Infracost](https://github.com/infracost/infracost) - CI/CD scanner for Terraform that evaluates cloud cost guardrails, tagging policies, and FinOps governance rules on pull requests. `[DORA]` `[Multi-Framework]` `Apache-2.0`
 - [KICS (Keeping Infrastructure as Code Secure)](https://github.com/Checkmarx/kics) - Open-source static scanner powered by OPA Rego queries to detect security misconfigurations across IaC providers. `[CIS]` `[NIST-800-53]` `Apache-2.0`
 - [pre-commit-terraform](https://github.com/antonbabenko/pre-commit-terraform) - Collection of Git pre-commit hooks integrating Checkov, Trivy, TFLint, and Terraform validate before code is committed. `[CIS]` `[Multi-Framework]` `MIT`
+- [terraform-compliance](https://github.com/terraform-compliance/cli) - Behavior-Driven Development (BDD) security and compliance test framework that validates Terraform execution plans against human-readable policy scenarios. `[CIS]` `[SOC2/ISO27001]` `MIT`
 - [terraform-docs](https://github.com/terraform-docs/terraform-docs) - Utility that generates automated input, output, and dependency documentation from Terraform modules in Markdown, JSON, and YAML formats. `[SOC2/ISO27001]` `[Multi-Framework]` `MIT`
 - [TFLint](https://github.com/terraform-linters/tflint) - Pluggable Terraform linter that enforces provider-specific validity rules, naming conventions, and deprecated resource checks in CI. `[CIS]` `[Multi-Framework]` `MPL-2.0`
 - [tfsec](https://github.com/aquasecurity/tfsec) - Static analysis security scanner for Terraform code that evaluates HCL templates locally and in CI pipelines against cloud security baselines. `[CIS]` `[SOC2/ISO27001]` `MIT`
@@ -174,8 +180,9 @@ Static analyzers that inspect declarative infrastructure templates, container ma
 
 ### Source Code, Secrets & Privacy Static Analyzers
 
+- [actionlint](https://github.com/rhysd/actionlint) - Static checker for GitHub Actions workflow files that validates syntax, expression types, runner labels, and inline shell scripts. `[SLSA]` `[EU-CRA]` `MIT`
 - [Bandit](https://github.com/PyCQA/bandit) - AST-based static security analyzer designed to locate common security and cryptographic defects in Python codebases. `[PCI-DSS]` `[EU-CRA]` `Apache-2.0`
-- [Bearer CLI](https://github.com/Bearer/bearer) - Static application security and data-flow scanner that discovers sensitive PII/PHI data types and maps how applications process them. `[GDPR]` `[PCI-DSS]` `ELv2`
+- [Capslock](https://github.com/google/capslock) - Static capability analyzer for Go packages that informs developers which privileged OS operations (network, filesystem, exec, cgo) transitive dependencies can invoke. `[EU-CRA]` `[SLSA]` `BSD-3-Clause`
 - [cargo-deny](https://github.com/EmbarkStudios/cargo-deny) - Cargo plugin for linting Rust dependency graphs against license compliance policies, banned crates, security advisories, and source registry rules. `[EU-CRA]` `[SLSA]` `Apache-2.0`
 - [Checkstyle](https://github.com/checkstyle/checkstyle) - Static analysis tool for validating Java source code against coding standards, structural invariants, and security rules in CI builds. `[PCI-DSS]` `[Multi-Framework]` `LGPL-2.1`
 - [detect-secrets](https://github.com/Yelp/detect-secrets) - Enterprise secret detection tool that prevents new credentials from entering Git repositories while maintaining an auditable baseline file. `[NIS2]` `[SOC2/ISO27001]` `Apache-2.0`
@@ -184,12 +191,14 @@ Static analyzers that inspect declarative infrastructure templates, container ma
 - [golangci-lint](https://github.com/golangci/golangci-lint) - Fast parallel Go linters runner aggregating Gosec, error-checking, and static analysis rules for CI verification gates. `[EU-CRA]` `[PCI-DSS]` `GPL-3.0`
 - [Gosec](https://github.com/securego/gosec) - Go security checker that inspects Go ASTs for unsafe cryptographic primitives, SQL injection vectors, and file permission weaknesses. `[PCI-DSS]` `[EU-CRA]` `Apache-2.0`
 - [l0-git](https://github.com/fabriziosalmi/l0-git) - Deterministic project-hygiene gate runner that scans repositories for leaked secrets, connection strings, missing governance files, and CI defects. `[NIS2]` `[EU-CRA]` `MIT`
+- [Presidio](https://github.com/data-privacy-stack/presidio) - Linux Foundation Data Privacy Stack SDK and service for detecting, redacting, masking, and anonymizing PII entities across text, images, and structured data streams. `[GDPR]` `[PCI-DSS]` `MIT`
 - [Privado CLI](https://github.com/Privado-Inc/privado) - Static privacy code scanner that discovers personal data elements in source code and traces data flows to third-party APIs, logs, and databases. `[GDPR]` `[SOC2/ISO27001]` `LGPL-3.0`
 - [RustSec Advisory Database & cargo-audit](https://github.com/rustsec/rustsec) - Vulnerability advisory repository and CLI auditing toolchain for Rust crates and Cargo.lock dependency trees. `[EU-CRA]` `[NIS2]` `MIT`
 - [Semgrep](https://github.com/semgrep/semgrep) - Polyglot static analysis tool with semantic pattern matching for enforcing secure coding standards, secrets prevention, and data-handling rules in CI. `[PCI-DSS]` `[GDPR]` `LGPL-2.1`
 - [SpotBugs](https://github.com/spotbugs/spotbugs) - Static bytecode analyzer for JVM applications that detects security defects, null-pointer dereferences, and concurrency flaws. `[PCI-DSS]` `[EU-CRA]` `LGPL-2.1`
 - [Talisman](https://github.com/thoughtworks/talisman) - Pre-commit and pre-push Git hook scanner that inspects outgoing changesets for private keys, tokens, and large sensitive files. `[NIS2]` `[SOC2/ISO27001]` `MIT`
 - [TruffleHog](https://github.com/trufflesecurity/trufflehog) - Secret discovery and verification engine that scans Git history, container images, S3 buckets, and filesystems for live credentials. `[NIS2]` `[SOC2/ISO27001]` `AGPL-3.0`
+- [zizmor](https://github.com/zizmorcore/zizmor) - Static security analysis tool for GitHub Actions workflows that detects template injection, unpinned actions, excessive permissions, and credential-persistence flaws. `[SLSA]` `[NIS2]` `MIT`
 
 ## 4. Software Supply Chain & Artifact Integrity
 
@@ -200,6 +209,8 @@ Technical enforcement tooling for SBOM generation, cryptographic signing, proven
 - [apko](https://github.com/chainguard-dev/apko) - Declarative container image builder based on APK packages that produces reproducible OCI images and emits build-time SPDX SBOMs automatically. `[EU-CRA]` `[SLSA]` `Apache-2.0`
 - [bom (Kubernetes SIGs)](https://github.com/kubernetes-sigs/bom) - CLI utility developed by Kubernetes SIG Release to generate standards-compliant SPDX Bills of Materials from images, tarballs, and source trees. `[EU-CRA]` `[SLSA]` `Apache-2.0`
 - [bomctl](https://github.com/bomctl/bomctl) - Format-agnostic SBOM management CLI built on Protobom for fetching, merging, linking, and pushing CycloneDX and SPDX documents. `[EU-CRA]` `[NIS2]` `Apache-2.0`
+- [CBOMkit](https://github.com/cbomkit/cbomkit) - Post-Quantum Cryptography Alliance (PQCA) platform for generating, analyzing, and auditing CycloneDX Cryptography Bills of Materials (CBOM) against quantum-safe compliance rules. `[EU-CRA]` `[DORA]` `Apache-2.0`
+- [CBOMkit-theia](https://github.com/cbomkit/cbomkit-theia) - CLI scanner that inspects container images, Java bytecode, certificates, and filesystems to extract cryptographic assets into CycloneDX CBOM documents. `[EU-CRA]` `[NIS2]` `Apache-2.0`
 - [cdxgen](https://github.com/cdxgen/cdxgen) - Polyglot CLI tool and library that generates CycloneDX SBOMs, CBOMs, SaaSBOMs, and OBOMs across dozens of package managers and languages. `[EU-CRA]` `[NIS2]` `Apache-2.0`
 - [CycloneDX CLI](https://github.com/CycloneDX/cyclonedx-cli) - Official tool for validating, converting, merging, diffing, and cryptographically signing CycloneDX SBOM documents. `[EU-CRA]` `[NIS2]` `Apache-2.0`
 - [cyclonedx-dotnet](https://github.com/CycloneDX/cyclonedx-dotnet) - Official .NET Core global tool for generating CycloneDX Software Bills of Materials from NuGet solutions and C# projects. `[EU-CRA]` `[NIS2]` `Apache-2.0`
@@ -234,6 +245,7 @@ Technical enforcement tooling for SBOM generation, cryptographic signing, proven
 - [OpenSSF Package Analysis](https://github.com/ossf/package-analysis) - Dynamic sandbox analysis pipeline that inspects open-source package behavior during installation to detect supply-chain attacks. `[EU-CRA]` `[NIS2]` `Apache-2.0`
 - [OSV-Scanner](https://github.com/google/osv-scanner) - Vulnerability scanner written in Go that matches project lockfiles, SBOMs, and container packages against the distributed Open Source Vulnerability database. `[EU-CRA]` `[NIS2]` `Apache-2.0`
 - [vexctl](https://github.com/openvex/vexctl) - CLI tool for creating, merging, attesting, and applying OpenVEX exploitability documents to filter scanner vulnerability reports. `[EU-CRA]` `[NIS2]` `Apache-2.0`
+- [Vunnel](https://github.com/anchore/vunnel) - Pluggable vulnerability data aggregator that fetches CVE, OSV, and distro security advisories into normalized schemas for offline compliance scanning. `[EU-CRA]` `[NIS2]` `Apache-2.0`
 
 ### Cryptographic Signing, Provenance & Transparency Logs
 
@@ -251,6 +263,7 @@ Technical enforcement tooling for SBOM generation, cryptographic signing, proven
 - [python-tuf](https://github.com/theupdateframework/python-tuf) - Reference Python implementation of The Update Framework (TUF) for compromise-resilient software distribution. `[EU-CRA]` `[SLSA]` `Apache-2.0`
 - [Quill](https://github.com/anchore/quill) - CLI tool for cryptographically signing and notarizing macOS binaries inside automated CI/CD release workflows. `[EU-CRA]` `[SLSA]` `Apache-2.0`
 - [Rekor](https://github.com/sigstore/rekor) - Immutable, tamper-resistant cryptographic transparency log for storing signed software supply-chain metadata and attestations. `[EU-CRA]` `[SLSA]` `Apache-2.0`
+- [Rekor Monitor](https://github.com/sigstore/rekor-monitor) - Transparency log consistency monitor that continuously verifies cryptographic inclusion proofs and detects unauthorized identity entries in Rekor. `[EU-CRA]` `[SLSA]` `Apache-2.0`
 - [securesystemslib](https://github.com/secure-systems-lab/securesystemslib) - Cryptographic and DSSE signing library underlying reference implementations of in-toto and The Update Framework (TUF). `[SLSA]` `[EU-CRA]` `MIT`
 - [Sigstore Timestamp Authority](https://github.com/sigstore/timestamp-authority) - RFC 3161 compliant Timestamp Authority server for issuing cryptographic signed timestamps over short-lived code signatures. `[EU-CRA]` `[SLSA]` `Apache-2.0`
 - [sigstore-go](https://github.com/sigstore/sigstore-go) - Go library for verifying Sigstore cryptographic bundles, Fulcio certificates, Rekor log inclusion proofs, and RFC 3161 timestamps. `[EU-CRA]` `[SLSA]` `Apache-2.0`
@@ -260,12 +273,14 @@ Technical enforcement tooling for SBOM generation, cryptographic signing, proven
 - [sigstore-rs](https://github.com/sigstore/sigstore-rs) - Rust crate implementing Sigstore signing, Fulcio OIDC identity verification, and Rekor transparency log queries. `[EU-CRA]` `[SLSA]` `Apache-2.0`
 - [SLSA GitHub Generator](https://github.com/slsa-framework/slsa-github-generator) - Isolated, reusable GitHub Actions workflows for generating unforgeable SLSA Level 3 provenance attestations across artifacts and containers. `[SLSA]` `[EU-CRA]` `Apache-2.0`
 - [SLSA Verifier](https://github.com/slsa-framework/slsa-verifier) - CLI tool to verify cryptographic SLSA provenance attestations generated by trusted CI/CD builders before deployment. `[SLSA]` `[EU-CRA]` `Apache-2.0`
+- [Tessera (Trillian Tessera)](https://github.com/transparency-dev/tessera) - Go library for building tile-based cryptographic transparency logs conforming to the C2SP tlog-tiles specification. `[EU-CRA]` `[SLSA]` `Apache-2.0`
+- [Trillian](https://github.com/google/trillian) - Cryptographically verifiable, append-only Merkle tree storage engine backing certificate transparency and software supply-chain logs. `[EU-CRA]` `[SLSA]` `Apache-2.0`
 - [Witness](https://github.com/in-toto/witness) - Pluggable framework for generating and verifying in-toto attestations during CI/CD build and test execution steps. `[SLSA]` `[EU-CRA]` `Apache-2.0`
 
 ### License Compliance & Dependency Governance
 
 - [cargo-about](https://github.com/EmbarkStudios/cargo-about) - Cargo plugin for generating complete third-party license attribution bundles and verifying license policies across Rust dependencies. `[EU-CRA]` `[Multi-Framework]` `Apache-2.0`
-- [FOSSA CLI](https://github.com/fossas/fossa-cli) - Zero-configuration polyglot command-line analyzer for dependency discovery, license compliance auditing, and SBOM export. `[EU-CRA]` `[Multi-Framework]` `MPL-2.0`
+- [FOSSA CLI](https://github.com/fossas/fossa-cli) - Zero-configuration polyglot command-line analyzer for dependency discovery, license compliance auditing, and SBOM export. `[EU-CRA]` `[Multi-Framework]` `CPAL-1.0`
 - [go-licenses](https://github.com/google/go-licenses) - CLI tool that analyzes Go package dependency trees to report license classifications and block forbidden license categories in CI. `[EU-CRA]` `[Multi-Framework]` `Apache-2.0`
 - [Google License Classifier](https://github.com/google/licenseclassifier) - Go library and command-line tool that computes similarity metrics on text files to identify open-source software licenses accurately. `[EU-CRA]` `[Multi-Framework]` `Apache-2.0`
 - [Grant](https://github.com/anchore/grant) - CLI tool for verifying open-source license compliance across container images, SBOMs, and filesystems against configurable allow/deny rules. `[EU-CRA]` `[Multi-Framework]` `Apache-2.0`
@@ -280,9 +295,12 @@ Technical enforcement tooling for SBOM generation, cryptographic signing, proven
 - [Allstar](https://github.com/ossf/allstar) - GitHub App developed by OpenSSF that continuously enforces repository security settings, branch protections, and security policies across organizations. `[SLSA]` `[NIS2]` `Apache-2.0`
 - [Chainloop](https://github.com/chainloop-dev/chainloop) - Open-source software supply-chain control plane for collecting, attesting, and evaluating SBOMs, SARIF reports, and CSAF advisories against declarative contracts. `[EU-CRA]` `[SLSA]` `Apache-2.0`
 - [GUAC (Graph for Understanding Artifact Composition)](https://github.com/guacsec/guac) - Graph database aggregator that ingests SBOMs, SLSA attestations, and VEX documents to answer complex supply-chain compliance queries. `[EU-CRA]` `[SLSA]` `Apache-2.0`
+- [Legitify](https://github.com/Legit-Labs/legitify) - Supply-chain posture scanner that audits GitHub and GitLab organizations, repositories, actions, and branch protection rules against SCM compliance policies. `[SLSA]` `[NIS2]` `Apache-2.0`
 - [Macaron](https://github.com/oracle/macaron) - Supply-chain security analyzer developed by Oracle Labs that inspects CI build pipelines and provenance against SLSA requirements. `[SLSA]` `[EU-CRA]` `UPL-1.0`
 - [Minder](https://github.com/mindersec/minder) - Supply-chain security platform that enrolls repositories and artifacts to continuously enforce declarative security and provenance rules. `[SLSA]` `[EU-CRA]` `Apache-2.0`
 - [OpenSSF Scorecard](https://github.com/ossf/scorecard) - Automated security health tool that evaluates open-source repositories against supply-chain checks including pinned dependencies, signed releases, and SAST gates. `[EU-CRA]` `[SLSA]` `Apache-2.0`
+- [OpenSSF Scorecard GitHub Action](https://github.com/ossf/scorecard-action) - Official GitHub Action that executes OpenSSF Scorecard supply-chain checks on pull requests and publishes SARIF compliance results. `[EU-CRA]` `[SLSA]` `Apache-2.0`
+- [Poutine](https://github.com/boostsecurityio/poutine) - Build pipeline vulnerability scanner that analyzes GitHub Actions and GitLab CI workflows for untrusted code execution and supply-chain misconfigurations. `[SLSA]` `[NIS2]` `Apache-2.0`
 
 ## 5. Host, Kernel & Runtime Hardening
 
@@ -306,8 +324,11 @@ Agents, eBPF sensors, and auditing frameworks that verify and enforce compliance
 ### Kubernetes Node & Cluster Runtime Benchmarks
 
 - [Kube-bench](https://github.com/aquasecurity/kube-bench) - Go tool that checks whether Kubernetes cluster nodes are deployed in accordance with the CIS Kubernetes Benchmark specifications. `[CIS]` `[NIS2]` `Apache-2.0`
+- [Kubescape Operator](https://github.com/kubescape/operator) - In-cluster Kubernetes security operator that continuously scans manifests, container images, and node configurations against CIS and NSA-CISA compliance benchmarks. `[CIS]` `[NIS2]` `Apache-2.0`
+- [NeuVector](https://github.com/neuvector/neuvector) - Zero-trust container security platform performing live CIS benchmark auditing, deep L7 network segmentation, and runtime process enforcement across Kubernetes clusters. `[CIS]` `[PCI-DSS]` `Apache-2.0`
 - [Security Profiles Operator](https://github.com/kubernetes-sigs/security-profiles-operator) - Kubernetes operator that manages cluster-wide seccomp, SELinux, and AppArmor profiles with audit-log recording for workload hardening. `[CIS]` `[NIS2]` `Apache-2.0`
 - [Sonobuoy](https://github.com/vmware-tanzu/sonobuoy) - Diagnostic tool that runs Kubernetes conformance tests and custom security plugins across cluster nodes to generate auditable archive reports. `[CIS]` `[Multi-Framework]` `Apache-2.0`
+- [StackRox (Red Hat Advanced Cluster Security)](https://github.com/stackrox/stackrox) - Kubernetes-native security and compliance platform auditing clusters against CIS Kubernetes, NIST SP 800-53, PCI-DSS, and HIPAA controls. `[CIS]` `[PCI-DSS]` `Apache-2.0`
 - [Trivy Operator](https://github.com/aquasecurity/trivy-operator) - Kubernetes-native security operator that continuously scans workloads and cluster nodes to produce CIS Benchmark, NSA, and SBOM compliance CRDs. `[CIS]` `[EU-CRA]` `Apache-2.0`
 
 ### eBPF & Kernel Runtime Policy Enforcement
@@ -338,9 +359,12 @@ Agents, eBPF sensors, and auditing frameworks that verify and enforce compliance
 - [Sealed Secrets](https://github.com/bitnami/sealed-secrets) - Kubernetes controller and CLI for one-way asymmetric encryption of secrets so credentials can be stored safely in GitOps repositories. `[NIS2]` `[SOC2/ISO27001]` `Apache-2.0`
 - [SOPS (Secrets OPerationS)](https://github.com/getsops/sops) - CNCF encrypted file editor supporting YAML, JSON, ENV, and INI formats backed by age, PGP, AWS KMS, GCP KMS, and Azure Key Vault. `[NIS2]` `[DORA]` `MPL-2.0`
 - [SPIRE](https://github.com/spiffe/spire) - Production runtime environment for SPIFFE that issues cryptographic workload identities (SVIDs) for zero-trust authentication across heterogeneous infrastructure. `[DORA]` `[NIST-800-53]` `Apache-2.0`
+- [SSLyze](https://github.com/nabla-c0d3/sslyze) - Python library and CLI scanner that analyzes SSL/TLS server configurations to detect weak cipher suites, expired certificates, and protocol vulnerabilities. `[NIS2]` `[PCI-DSS]` `AGPL-3.0`
 - [step-ca (Smallstep Certificates)](https://github.com/smallstep/certificates) - Private online Certificate Authority and ACME server for automating X.509 and SSH certificate issuance across internal workloads. `[NIS2]` `[DORA]` `Apache-2.0`
 - [step-cli (Smallstep CLI)](https://github.com/smallstep/cli) - Zero-trust command-line toolkit for inspecting, minting, and verifying X.509 certificates, JWTs, OAuth tokens, and ACME workflows. `[NIS2]` `[DORA]` `Apache-2.0`
 - [Tailscale](https://github.com/tailscale/tailscale) - WireGuard-based mesh VPN client with declarative JSON Access Control Lists (ACLs) and GitOps policy enforcement workflows. `[NIS2]` `[SOC2/ISO27001]` `BSD-3-Clause`
+- [testssl.sh](https://github.com/testssl/testssl.sh) - Command-line tool that checks any server port for supported TLS/SSL ciphers, cryptographic protocols, and certificate chain compliance flaws. `[NIS2]` `[PCI-DSS]` `GPL-2.0`
+- [tlsx](https://github.com/projectdiscovery/tlsx) - Fast TLS data-collection and cipher-probing CLI with JSON output for automated cryptographic posture verification across network assets. `[NIS2]` `[DORA]` `MIT`
 - [Velociraptor](https://github.com/Velocidex/velociraptor) - Endpoint visibility, digital forensics, and continuous incident-response query platform powered by the Velociraptor Query Language (VQL). `[NIS2]` `[DORA]` `AGPL-3.0`
 - [Wazuh](https://github.com/wazuh/wazuh) - Open-source XDR and SIEM platform providing continuous configuration assessment, file integrity monitoring, and regulatory dashboards for PCI-DSS, GDPR, and NIS2. `[PCI-DSS]` `[NIS2]` `GPL-2.0`
 
@@ -351,21 +375,20 @@ Tools that query live cloud APIs, identity providers, and infrastructure state t
 ### SQL-Over-Infrastructure & Asset Graph Engines
 
 - [Cartography](https://github.com/cartography-cncf/cartography) - CNCF Python tool that consolidates infrastructure assets, IAM permissions, and network topology into a Neo4j graph database for exposure analysis. `[SOC2/ISO27001]` `[DORA]` `Apache-2.0`
-- [CloudQuery](https://github.com/cloudquery/cloudquery) - High-performance open-source ELT framework that extracts configuration state from cloud APIs into SQL databases for historical posture auditing. `[DORA]` `[SOC2/ISO27001]` `Apache-2.0`
+- [CloudQuery](https://github.com/cloudquery/cloudquery) - High-performance open-source ELT framework that extracts configuration state from cloud APIs into SQL databases for historical posture auditing. `[DORA]` `[SOC2/ISO27001]` `MPL-2.0`
 - [DataHub](https://github.com/datahub-project/datahub) - Extensible metadata and data governance platform providing fine-grained lineage, PII classification tags, and compliance audit trails across data stacks. `[GDPR]` `[EU-AI-Act]` `Apache-2.0`
-- [MQL (Mondoo Query Language / cnquery)](https://github.com/mondoohq/mql) - Graph-based query engine and CLI for inspecting live configuration data across cloud accounts, Kubernetes clusters, containers, and OS hosts. `[CIS]` `[Multi-Framework]` `Apache-2.0`
+- [Fix Inventory](https://github.com/someengineering/fixinventory) - Cloud asset graph engine that indexes multi-cloud and Kubernetes resources into a searchable graph database for continuous compliance and drift queries. `[DORA]` `[SOC2/ISO27001]` `Apache-2.0`
 - [OpenMetadata](https://github.com/open-metadata/OpenMetadata) - Unified metadata, data quality, and data governance platform for cataloging schemas, tracking lineage, and enforcing data privacy policies. `[GDPR]` `[EU-AI-Act]` `Apache-2.0`
-- [Powerpipe](https://github.com/turbot/powerpipe) - Declarative HCL dashboard and benchmark runner for executing SQL-based compliance packs (CIS, NIST, SOC 2, PCI-DSS, DORA) over Steampipe or PostgreSQL. `[DORA]` `[CIS]` `Apache-2.0`
-- [Steampipe](https://github.com/turbot/steampipe) - Zero-ETL SQL engine that exposes cloud APIs, Kubernetes clusters, and SaaS platforms as foreign tables in PostgreSQL for live compliance querying. `[DORA]` `[SOC2/ISO27001]` `Apache-2.0`
-- [Tailpipe](https://github.com/turbot/tailpipe) - DuckDB-powered CLI tool for collecting and querying cloud audit logs, flow logs, and security events locally using standard SQL. `[DORA]` `[NIS2]` `Apache-2.0`
+- [Powerpipe](https://github.com/turbot/powerpipe) - Declarative HCL dashboard and benchmark runner for executing SQL-based compliance packs (CIS, NIST, SOC 2, PCI-DSS, DORA) over Steampipe or PostgreSQL. `[DORA]` `[CIS]` `AGPL-3.0`
+- [Steampipe](https://github.com/turbot/steampipe) - Zero-ETL SQL engine that exposes cloud APIs, Kubernetes clusters, and SaaS platforms as foreign tables in PostgreSQL for live compliance querying. `[DORA]` `[SOC2/ISO27001]` `AGPL-3.0`
+- [Tailpipe](https://github.com/turbot/tailpipe) - DuckDB-powered CLI tool for collecting and querying cloud audit logs, flow logs, and security events locally using standard SQL. `[DORA]` `[NIS2]` `AGPL-3.0`
 
 ### Continuous Cloud Security Posture & Drift Engines
 
-- [CISA Malcolm](https://github.com/cisagov/Malcolm) - Network traffic analysis and packet capture suite developed by CISA for monitoring industrial control systems and enterprise network segmentation. `[NIS2]` `[NIST-800-53]` `CC0-1.0`
+- [CISA Malcolm](https://github.com/cisagov/Malcolm) - Network traffic analysis and packet capture suite developed by CISA for monitoring industrial control systems and enterprise network segmentation. `[NIS2]` `[NIST-800-53]` `Apache-2.0`
 - [Cloud Custodian](https://github.com/cloud-custodian/cloud-custodian) - Rules engine for managing public cloud accounts and resources with YAML policies for real-time compliance enforcement, tagging, and encryption remediation. `[DORA]` `[SOC2/ISO27001]` `Apache-2.0`
 - [cloud-nuke](https://github.com/gruntwork-io/cloud-nuke) - CLI tool for identifying and cleaning up orphaned or non-compliant cloud resources across AWS accounts to enforce environment hygiene. `[SOC2/ISO27001]` `[DORA]` `MIT`
-- [CloudSploit](https://github.com/aquasecurity/cloudsploit) - Open-source cloud security posture scanner that detects misconfigurations across AWS, Azure, Google Cloud, and Oracle Cloud Infrastructure. `[CIS]` `[SOC2/ISO27001]` `Apache-2.0`
-- [cnspec](https://github.com/mondoohq/cnspec) - Policy-as-code security and compliance scanner built on MQL for evaluating cloud accounts, Kubernetes, and hosts against CIS and regulatory baselines. `[CIS]` `[SOC2/ISO27001]` `Apache-2.0`
+- [CloudSploit](https://github.com/aquasecurity/cloudsploit) - Open-source cloud security posture scanner that detects misconfigurations across AWS, Azure, Google Cloud, and Oracle Cloud Infrastructure. `[CIS]` `[SOC2/ISO27001]` `GPL-3.0`
 - [Microsoft Defender for Cloud Community Policies](https://github.com/Azure/Microsoft-Defender-for-Cloud) - Repository of Azure Policy definitions, remediation scripts, and workbooks for continuous regulatory compliance assessment on Azure. `[CIS]` `[DORA]` `MIT`
 - [nis2-public](https://github.com/fabriziosalmi/nis2-public) - Self-hosted NIS2 posture management and domain security scanner that evaluates external attack surfaces, DNSSEC, TLS, and HTTP security headers. `[NIS2]` `[DORA]` `AGPL-3.0`
 - [Prowler](https://github.com/prowler-cloud/prowler) - Cloud security posture and continuous compliance CLI covering AWS, Azure, GCP, and Kubernetes with native mappings for NIS2, DORA, ENS, CIS, and PCI-DSS v4.0. `[NIS2]` `[DORA]` `Apache-2.0`
@@ -382,6 +405,7 @@ Tools that query live cloud APIs, identity providers, and infrastructure state t
 
 - [Compliance Masonry](https://github.com/opencontrol/compliance-masonry) - CLI tool that constructs System Security Plans (SSP) and gitbook compliance documentation from machine-readable OpenControl YAML files. `[NIST-800-53]` `[Multi-Framework]` `CC0-1.0`
 - [Compliance Trestle](https://github.com/oscal-compass/compliance-trestle) - Python SDK and CLI managed under the OSCAL Compass project for authoring, transforming, and validating NIST OSCAL documents in Git workflows. `[NIST-800-53]` `[Multi-Framework]` `Apache-2.0`
+- [Compliance Trestle Demos](https://github.com/oscal-compass/compliance-trestle-demos) - End-to-end reference pipelines demonstrating continuous NIST OSCAL catalog, profile, and component-definition automation with Compliance Trestle. `[NIST-800-53]` `[Multi-Framework]` `Apache-2.0`
 - [go-oscal](https://github.com/defenseunicorns/go-oscal) - Go library and CLI for generating, validating, and converting NIST OSCAL types across versioned JSON and YAML schemas. `[NIST-800-53]` `[Multi-Framework]` `Apache-2.0`
 - [Heimdall2](https://github.com/mitre/heimdall2) - Web-based and CLI security test result visualizer that aggregates InSpec, SARIF, SonarQube, and OWASP ZAP outputs mapped to NIST SP 800-53 controls. `[NIST-800-53]` `[Multi-Framework]` `Apache-2.0`
 - [Lula](https://github.com/defenseunicorns/lula) - Kubernetes and infrastructure compliance validator that evaluates live system state and converts evidence directly into NIST OSCAL Assessment Results. `[NIST-800-53]` `[Multi-Framework]` `Apache-2.0`
@@ -403,11 +427,10 @@ Testing frameworks, red-teaming scanners, and documentation generators for trans
 - [llmproxy](https://github.com/fabriziosalmi/llmproxy) - Security-first LLM gateway with tamper-evident audit logging, rate controls, and policy enforcement for regulated AI workloads. `[EU-AI-Act]` `[DORA]` `MIT`
 - [NeMo Guardrails](https://github.com/NVIDIA-NeMo/Guardrails) - Programmable toolkit for adding conversational safety rails, fact-checking flows, and jailbreak prevention to LLM applications. `[EU-AI-Act]` `[ISO-42001]` `Apache-2.0`
 - [Promptfoo](https://github.com/promptfoo/promptfoo) - CLI and CI/CD evaluation suite for deterministic LLM testing, automated red-teaming, prompt injection checks, and OWASP LLM Top 10 compliance reporting. `[EU-AI-Act]` `[ISO-42001]` `MIT`
-- [Purple Llama](https://github.com/meta-llama/PurpleLlama) - Suite of open trust and safety tools including CyberSecEval benchmarks and Llama Guard classifiers for defensive generative AI deployment. `[EU-AI-Act]` `[ISO-42001]` `MIT`
+- [PyRIT (Python Risk Identification Tool)](https://github.com/microsoft/PyRIT) - Open-source automation framework developed by Microsoft AI Red Team for probing generative AI systems against jailbreaks, prompt injection, and safety risks. `[EU-AI-Act]` `[ISO-42001]` `MIT`
 
 ### RAG Faithfulness, Hallucination & Benchmark Evaluation
 
-- [Arize Phoenix](https://github.com/Arize-ai/phoenix) - OpenTelemetry-based AI observability and evaluation platform for tracing LLM calls, quantifying RAG hallucination rates, and auditing model drift. `[EU-AI-Act]` `[ISO-42001]` `ELv2`
 - [Cleanlab](https://github.com/cleanlab/cleanlab) - Data-centric AI library that automatically detects label errors, outliers, and low-quality training samples to satisfy EU AI Act Art. 10 data governance rules. `[EU-AI-Act]` `[ISO-42001]` `Apache-2.0`
 - [DeepEval](https://github.com/confident-ai/deepeval) - Unit-testing framework for LLM systems that evaluates hallucination rates, factual faithfulness, toxicity, and PII leakage inside CI pipelines. `[EU-AI-Act]` `[ISO-42001]` `Apache-2.0`
 - [Evidently](https://github.com/evidentlyai/evidently) - Open-source ML and LLM observability framework for evaluating data drift, model performance degradation, and RAG behavioral metrics. `[EU-AI-Act]` `[ISO-42001]` `Apache-2.0`
@@ -415,6 +438,8 @@ Testing frameworks, red-teaming scanners, and documentation generators for trans
 - [Hugging Face Evaluate](https://github.com/huggingface/evaluate) - Python library for standardized evaluation of machine learning models and datasets across accuracy, bias, toxicity, and statistical parity metrics. `[EU-AI-Act]` `[ISO-42001]` `Apache-2.0`
 - [Inspect AI](https://github.com/UKGovernmentBEIS/inspect_ai) - Framework developed by the UK AI Safety Institute for evaluating frontier language model capabilities, autonomous agent safety, and robustness. `[EU-AI-Act]` `[ISO-42001]` `MIT`
 - [LM Evaluation Harness](https://github.com/EleutherAI/lm-evaluation-harness) - Unified benchmarking framework by EleutherAI for reproducible few-shot evaluation of causal and instruction-tuned language models. `[EU-AI-Act]` `[ISO-42001]` `MIT`
+- [MLflow](https://github.com/mlflow/mlflow) - Open-source AI platform for tracking experiment parameters, model lineage, automated LLM evaluation metrics, and versioned governance registries. `[EU-AI-Act]` `[ISO-42001]` `Apache-2.0`
+- [OpenLIT](https://github.com/openlit/openlit) - OpenTelemetry-native observability and evaluation platform for monitoring LLM calls, detecting prompt injection, and auditing RAG hallucination rates. `[EU-AI-Act]` `[ISO-42001]` `Apache-2.0`
 - [Ragas](https://github.com/vibrantlabsai/ragas) - Evaluation framework for Retrieval-Augmented Generation (RAG) pipelines quantifying context precision, recall, and answer faithfulness. `[EU-AI-Act]` `[ISO-42001]` `Apache-2.0`
 - [TruLens](https://github.com/truera/trulens) - Instrumentation and evaluation library for tracking LLM experiments and computing groundedness, relevance, and safety feedback functions. `[EU-AI-Act]` `[ISO-42001]` `MIT`
 
@@ -437,18 +462,21 @@ Ready-to-run policy rulesets, control catalogs, and hardening baselines mapped t
 
 ### Machine-Readable Control Catalogs & Requirements
 
-- [MITRE ATT&CK Decider](https://github.com/cisagov/decider) - CISA web application and structured catalog mapping adversary behaviors to MITRE ATT&CK techniques and defensive controls. `[NIS2]` `[NIST-800-53]` `CC0-1.0`
+- [MITRE ATT&CK Decider](https://github.com/cisagov/decider) - CISA web application and structured catalog mapping adversary behaviors to MITRE ATT&CK techniques and defensive controls. `[NIS2]` `[NIST-800-53]` `CC-BY-4.0`
+- [MITRE CTID Mappings Explorer](https://github.com/center-for-threat-informed-defense/mappings-explorer) - Machine-readable repository mapping NIST SP 800-53, CIS Controls, OWASP, and cloud native security controls directly to MITRE ATT&CK techniques. `[NIST-800-53]` `[CIS]` `Apache-2.0`
 - [MITRE Vulcan](https://github.com/mitre/vulcan) - Application for authoring and exporting Security Technical Implementation Guides (STIGs) and InSpec compliance profiles mapped to NIST SP 800-53. `[NIST-800-53]` `[CIS]` `Apache-2.0`
 - [NIST OSCAL Content Repository](https://github.com/usnistgov/oscal-content) - Official machine-readable JSON, YAML, and XML control catalogs and baselines for NIST SP 800-53 Rev. 5, FedRAMP, and NIST Cybersecurity Framework. `[NIST-800-53]` `[Multi-Framework]` `Public-Domain`
-- [OWASP ASVS (Application Security Verification Standard)](https://github.com/OWASP/ASVS) - Community-maintained catalog of application security requirements published in JSON, CSV, XML, and Markdown formats for automated verification mapping. `[PCI-DSS]` `[EU-CRA]` `CC-BY-4.0`
-- [OWASP OpenCRE (Common Requirements Enumeration)](https://github.com/OWASP/OpenCRE) - Interactive knowledge graph and API linking security standards (NIST 800-53, ISO 27001, OWASP ASVS, CWE, CAPEC) to unified technical controls. `[Multi-Framework]` `Apache-2.0`
+- [OWASP ASVS (Application Security Verification Standard)](https://github.com/OWASP/ASVS) - Community-maintained catalog of application security requirements published in JSON, CSV, XML, and Markdown formats for automated verification mapping. `[PCI-DSS]` `[EU-CRA]` `CC-BY-SA-4.0`
+- [OWASP OpenCRE (Common Requirements Enumeration)](https://github.com/OWASP/OpenCRE) - Interactive knowledge graph and API linking security standards (NIST 800-53, ISO 27001, OWASP ASVS, CWE, CAPEC) to unified technical controls. `[Multi-Framework]` `CC0-1.0`
 
 ### Kubernetes, OPA & Kyverno Policy Libraries
 
+- [Chainguard Policy Catalog](https://github.com/chainguard-dev/policy-catalog) - Collection of declarative Sigstore Policy Controller and admission policies enforcing image signatures, SBOM attestations, and runtime hardening. `[EU-CRA]` `[SLSA]` `Apache-2.0`
+- [CRDs-catalog](https://github.com/datreeio/CRDs-catalog) - Curated repository of OpenAPI and JSON Schemas for Kubernetes CustomResourceDefinitions (CRDs) used with Kubeconform in offline CI validation gates. `[CIS]` `[Multi-Framework]` `MIT`
 - [Gatekeeper Library](https://github.com/open-policy-agent/gatekeeper-library) - Community-owned library of OPA Gatekeeper ConstraintTemplates and Rego policies enforcing Kubernetes Pod Security Standards and network isolation. `[CIS]` `[NIS2]` `Apache-2.0`
 - [Kyverno Policy Library](https://github.com/kyverno/policies) - Official repository of Kubernetes Pod Security Standards (PSS), supply-chain attestation rules, and multi-tenancy isolation policies for Kyverno. `[CIS]` `[NIS2]` `Apache-2.0`
 - [Red Hat CoP Rego Policies](https://github.com/redhat-cop/rego-policies) - Collection of Open Policy Agent Rego policies tested with Conftest for validating OpenShift, Kubernetes, and Tekton supply-chain resources. `[CIS]` `[NIS2]` `Apache-2.0`
-- [Semgrep Official Rules Repository](https://github.com/semgrep/semgrep-rules) - Community-maintained library of thousands of static analysis rules covering OWASP Top 10, CWE, secrets detection, and framework hardening. `[PCI-DSS]` `[EU-CRA]` `MIT`
+- [Trail of Bits Semgrep Rules](https://github.com/trailofbits/semgrep-rules) - Open-source repository of Semgrep static analysis queries developed by Trail of Bits to detect cryptographic misuse, memory flaws, and injection defects. `[PCI-DSS]` `[EU-CRA]` `AGPL-3.0`
 - [Trivy Checks Policy Library](https://github.com/aquasecurity/trivy-checks) - Official repository of Rego and YAML configuration checks powering Trivy IaC, Kubernetes, and cloud posture compliance scans. `[CIS]` `[NIS2]` `MIT`
 
 ### Host, Edge & Cloud Hardening Baselines
@@ -478,20 +506,27 @@ Ready-to-run policy rulesets, control catalogs, and hardening baselines mapped t
 
 Technical specifications, working groups, and engineering blueprints for designing continuous compliance pipelines.
 
-- [AWS Security Reference Architecture Examples](https://github.com/aws-samples/aws-security-reference-architecture-examples) - CloudFormation and Terraform reference implementations demonstrating multi-account security guardrails, centralized logging, and compliance automation on AWS. `[DORA]` `[SOC2/ISO27001]` `MIT`
-- [OpenGitOps Documents](https://github.com/open-gitops/documents) - CNCF OpenGitOps principles and reference specifications for declarative, immutable, and continuously reconciled system state. `[DORA]` `[Multi-Framework]` `CC-BY-4.0`
-- [OpenSSF Best Practices for Open Source Developers](https://github.com/ossf/wg-best-practices-os-developers) - OpenSSF working group guides covering compiler hardening flags, secure software development lifecycles, and dependency hygiene. `[EU-CRA]` `[SLSA]` `CC-BY-4.0`
+### Supply-Chain & Open-Source Security Frameworks
+
+- [OpenSSF Best Practices for Open Source Developers](https://github.com/ossf/wg-best-practices-os-developers) - OpenSSF working group guides covering compiler hardening flags, secure software development lifecycles, and dependency hygiene. `[EU-CRA]` `[SLSA]` `Apache-2.0`
 - [OpenSSF OSPS Baseline (Open Source Project Security Baseline)](https://github.com/ossf/security-baseline) - Catalog of machine-mappable security controls for open-source projects aligned with the EU Cyber Resilience Act and NIST SSDF. `[EU-CRA]` `[NIST-800-53]` `Apache-2.0`
-- [OpenSSF S2C2F (Secure Supply Chain Consumption Framework)](https://github.com/ossf/s2c2f) - Engineering framework governing how enterprises ingest, scan, rebuild, and audit third-party open-source dependencies. `[EU-CRA]` `[NIS2]` `CC-BY-4.0`
+- [OpenSSF S2C2F (Secure Supply Chain Consumption Framework)](https://github.com/ossf/s2c2f) - Engineering framework governing how enterprises ingest, scan, rebuild, and audit third-party open-source dependencies. `[EU-CRA]` `[NIS2]` `Community-Spec-1.0`
 - [OpenSSF Securing Software Repositories WG](https://github.com/ossf/wg-securing-software-repos) - OpenSSF working group developing reference architectures, package signing specifications, and trusted publishing standards for package registries. `[EU-CRA]` `[SLSA]` `Apache-2.0`
 - [OpenSSF Supply Chain Integrity Working Group](https://github.com/ossf/wg-supply-chain-integrity) - Working group repository maintaining supply-chain threat models, SLSA governance, and software provenance reference architectures. `[EU-CRA]` `[SLSA]` `Apache-2.0`
 - [OpenSSF Technical Advisory Council (TAC)](https://github.com/ossf/tac) - Governance, security roadmaps, and cross-working-group technical specifications maintained by the Open Source Security Foundation. `[EU-CRA]` `[SLSA]` `CC-BY-4.0`
 - [OpenSSF Vulnerability Disclosures WG](https://github.com/ossf/wg-vulnerability-disclosures) - Working group repository providing coordinated vulnerability disclosure templates, OSV/CSAF automation guides, and Embargo policies. `[EU-CRA]` `[NIS2]` `Apache-2.0`
-- [OWASP AI Security and Privacy Guide](https://github.com/OWASP/www-project-ai-security-and-privacy-guide) - Technical engineering guide detailing adversarial robustness controls, model provenance, and data minimization under GDPR and the EU AI Act. `[EU-AI-Act]` `[GDPR]` `CC-BY-4.0`
-- [OWASP Cheat Sheet Series](https://github.com/OWASP/CheatSheetSeries) - Concise collection of actionable application security and cryptography implementation guides maintained by the OWASP community. `[PCI-DSS]` `[NIS2]` `CC-BY-SA-4.0`
 - [OWASP CycloneDX Authoritative Guide to SBOM](https://github.com/CycloneDX/bom-examples) - Official repository of machine-readable SBOM, CBOM, VEX, and attestation examples for software supply-chain compliance. `[EU-CRA]` `[NIS2]` `CC0-1.0`
-- [OWASP DevSecOps Guideline](https://github.com/OWASP/www-project-devsecops-guideline) - Engineering guide detailing how to embed static analysis, dynamic scanning, SBOM verification, and policy gates into CI/CD pipelines. `[EU-CRA]` `[NIS2]` `CC-BY-4.0`
-- [OWASP Top 10 for Large Language Model Applications](https://github.com/OWASP/www-project-top-10-for-large-language-model-applications) - Reference taxonomy of security and governance failure modes in generative AI applications including prompt injection and training data poisoning. `[EU-AI-Act]` `[ISO-42001]` `CC-BY-4.0`
+
+### Cloud, GitOps & AI Governance Blueprints
+
+- [AWS Security Reference Architecture Examples](https://github.com/aws-samples/aws-security-reference-architecture-examples) - CloudFormation and Terraform reference implementations demonstrating multi-account security guardrails, centralized logging, and compliance automation on AWS. `[DORA]` `[SOC2/ISO27001]` `CC-BY-SA-4.0`
+- [Azure Landing Zones (Enterprise-Scale)](https://github.com/Azure/Enterprise-Scale) - Modular reference architecture and Azure Policy guardrails for deploying compliant, multi-subscription enterprise cloud environments. `[DORA]` `[SOC2/ISO27001]` `MIT`
+- [Azure Landing Zones Bicep](https://github.com/Azure/ALZ-Bicep) - Bicep modules implementing Azure Landing Zones governance, network segmentation, and continuous policy enforcement controls. `[DORA]` `[CIS]` `MIT`
+- [OpenGitOps Documents](https://github.com/open-gitops/documents) - CNCF OpenGitOps principles and reference specifications for declarative, immutable, and continuously reconciled system state. `[DORA]` `[Multi-Framework]` `CC-BY-4.0`
+- [OWASP AI Security and Privacy Guide](https://github.com/OWASP/www-project-ai-security-and-privacy-guide) - Technical engineering guide detailing adversarial robustness controls, model provenance, and data minimization under GDPR and the EU AI Act. `[EU-AI-Act]` `[GDPR]` `CC-BY-SA-4.0`
+- [OWASP Cheat Sheet Series](https://github.com/OWASP/CheatSheetSeries) - Concise collection of actionable application security and cryptography implementation guides maintained by the OWASP community. `[PCI-DSS]` `[NIS2]` `CC-BY-SA-4.0`
+- [OWASP DevSecOps Guideline](https://github.com/OWASP/www-project-devsecops-guideline) - Engineering guide detailing how to embed static analysis, dynamic scanning, SBOM verification, and policy gates into CI/CD pipelines. `[EU-CRA]` `[NIS2]` `CC-BY-SA-4.0`
+- [OWASP Top 10 for Large Language Model Applications](https://github.com/OWASP/www-project-top-10-for-large-language-model-applications) - Reference taxonomy of security and governance failure modes in generative AI applications including prompt injection and training data poisoning. `[EU-AI-Act]` `[ISO-42001]` `CC-BY-SA-4.0`
 - [OWASP WrongSecrets](https://github.com/OWASP/wrongsecrets) - Deliberately vulnerable testbed application and CI benchmark for evaluating how effectively secret-scanning tools detect leaked credentials. `[NIS2]` `[PCI-DSS]` `AGPL-3.0`
 
 ## Regulatory-to-Code Mapping Matrix
@@ -504,7 +539,7 @@ The matrix below maps statutory and industry compliance articles to deterministi
 | **EU NIS2 Directive** | Art. 21(2)(d) & Art. 21(2)(e) | Supply-chain security and security in network and information systems acquisition, development, and maintenance. | Reject container workloads running as root (`UID 0`) or missing verified provenance annotations at cluster admission. | `trivy` in CI/CD + OPA Rego (`examples/opa/cra_workloads.rego`) or Kyverno policy. |
 | **EU DORA** | Art. 9(2) & Art. 10(1) | Continuous protection of ICT systems, cryptographic key/data protection at rest and in transit, and configuration drift detection. | Enforce keyless image signature verification on production pods and run continuous SQL queries over cloud storage encryption state. | Kyverno (`examples/kyverno/dora_signed_images.yaml`) + Steampipe (`examples/steampipe/dora_s3_encryption.sql`). |
 | **EU AI Act** | Art. 10, Art. 14 & Art. 15 | Data governance, bias detection, accuracy measurement, and resilience against adversarial manipulation (prompt injection) for high-risk AI systems. | Execute automated red-teaming, bias disparity metrics, and hallucination thresholds as blocking pull-request gates. | `promptfoo`, `garak`, `giskard-oss`, and `fairlearn` in ML CI workflows. |
-| **GDPR** | Art. 25 & Art. 32 | Data protection by design and by default; pseudonymisation, encryption, and prevention of unauthorized PII logging. | Static AST rules blocking unmasked PII fields in log sinks and verifying column-level encryption on data stores. | `semgrep` / `bearer` / `privado` + `checkov` / `steampipe` database encryption audits. |
+| **GDPR** | Art. 25 & Art. 32 | Data protection by design and by default; pseudonymisation, encryption, and prevention of unauthorized PII logging. | Static AST and DLP rules blocking unmasked PII fields in log sinks and verifying column-level encryption on data stores. | `semgrep` / `presidio` / `privado` + `checkov` / `steampipe` database encryption audits. |
 | **PCI-DSS v4.0** | Req. 6.3.2 & Req. 6.4.3 | Maintain bespoke and third-party software inventory; authorize and assure integrity of all payment page scripts. | Automated SBOM generation on every release plus static verification of Content Security Policy (CSP) and Subresource Integrity (SRI). | `cdxgen` / `ort` + `semgrep` + `inspec` host baseline checks. |
 | **NIST SP 800-53 Rev. 5** | AC-6 (Least Privilege) & CM-2 (Baseline Config) | Enforce least privilege across identities and workloads; maintain automated baseline configurations and system security plans. | Validate IAM policies for wildcard absence and emit machine-readable OSCAL Component Definitions and Assessment Results. | `cedar` / `checkov` + `lula` / `compliance-trestle` (`examples/oscal/cra_component_definition.json`). |
 | **ISO/IEC 42001** | Annex A.6.2 & A.8.4 | Document AI system lifecycle, training data provenance, model limitations, and continuous runtime evaluation metrics. | Verify model weight safety, track evaluation benchmarks, and evaluate RAG faithfulness in CI. | `modelscan` + `deepeval` / `ragas` / `promptfoo`. |

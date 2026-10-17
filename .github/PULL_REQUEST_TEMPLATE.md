@@ -11,7 +11,7 @@
 ### Mandatory Verification Checklist
 
 - [ ] The resource is an executable tool, library, policy pack, or formal machine-readable specification (not a consultancy site, gated PDF, or closed-box SaaS).
-- [ ] The resource is open source or provides a free, functional self-hostable CLI/engine.
+- [ ] The resource is distributed under an approved OSI open-source or open-specification license listed in `CONTRIBUTING.md`.
 - [ ] The source repository is unarchived and actively maintained.
 - [ ] The entry is placed in **strict alphabetical order** within its target section.
 - [ ] The description is neutral, factual, at most two sentences, and contains no marketing superlatives, emojis, or em dashes.
