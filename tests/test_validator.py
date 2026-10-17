@@ -105,6 +105,15 @@ class ValidatorTestSuite(unittest.TestCase):
         errors = validate_markdown_text(content)
         self.assertEqual(errors, [], f"README.md validation failed: {[str(e) for e in errors]}")
 
+    def test_contributing_documents_all_tags_and_licenses(self) -> None:
+        from scripts.validate_readme import ALLOWED_LICENSES, ALLOWED_REGULATORY_TAGS, ROOT_DIR
+
+        contributing = (ROOT_DIR / "CONTRIBUTING.md").read_text(encoding="utf-8")
+        for tag in ALLOWED_REGULATORY_TAGS:
+            self.assertIn(f"`{tag}`", contributing, f"CONTRIBUTING.md missing regulatory tag {tag}")
+        for lic in ALLOWED_LICENSES:
+            self.assertIn(f"`{lic}`", contributing, f"CONTRIBUTING.md missing license {lic}")
+
 
 if __name__ == "__main__":
     unittest.main()
