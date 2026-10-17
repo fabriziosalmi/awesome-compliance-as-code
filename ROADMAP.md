@@ -16,15 +16,15 @@ This document tracks the engineering milestones for `awesome-compliance-as-code`
 - [x] Build the Regulatory-to-Code Mapping Matrix covering EU Cyber Resilience Act (CRA), NIS2, DORA, EU AI Act, GDPR, PCI-DSS v4.0, NIST SP 800-53 Rev. 5, and ISO/IEC 42001.
 - [x] Pass all 11 unit/break tests and all 36 `lgit check .` project-hygiene gates with `0` findings.
 
-## Milestone 3: Private GitHub Repository and Atomic CI (`v0.0.1`)
+## Milestone 3: Private GitHub Repository and Atomic CI (`v0.0.1` - Done)
 
-- [ ] Create private repository `fabriziosalmi/awesome-compliance-as-code` and push `main`.
-- [ ] Verify SHA-pinned GitHub Actions workflows on GitHub runners:
+- [x] Create private repository `fabriziosalmi/awesome-compliance-as-code` and push `main`.
+- [x] Verify SHA-pinned GitHub Actions workflows on GitHub runners:
   - `ci.yml`: structural validator, unit tests, `examples/` syntax and policy tests (`opa check --strict`, `opa test`), and JSON/YAML validation.
   - `slopless.yml`: static analysis against AI-slop patterns on Markdown and Python files.
   - `links.yml`: scheduled and PR-triggered link verification.
   - `health-check.yml`: quarterly repository freshness and archive monitor via GitHub API.
-- [ ] Confirm 100% green CI and tag `v0.0.1`.
+- [x] Confirm 100% green CI and tag `v0.0.1`.
 
 ## Milestone 4: Visual Assets and Pre-Launch Polish (`v0.1.0`)
 
