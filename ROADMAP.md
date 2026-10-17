@@ -26,12 +26,12 @@ This document tracks the engineering milestones for `awesome-compliance-as-code`
   - `health-check.yml`: quarterly repository freshness and archive monitor via GitHub API.
 - [x] Confirm 100% green CI and tag `v0.0.1`.
 
-## Milestone 4: Visual Assets and Pre-Launch Polish (`v0.1.0`)
+## Milestone 4: Visual Assets and Pre-Launch Polish (`v0.1.0` - Done)
 
-- [ ] Add architectural SVG diagram (`assets/compliance-lifecycle.svg`) illustrating the Compliance-as-Code control loop from specification to runtime attestation.
-- [ ] Final review of descriptions, regulatory tags, and Table of Contents anchors.
+- [x] Add architectural SVG diagram (`assets/compliance-lifecycle.svg`) illustrating the Compliance-as-Code control loop from specification to runtime attestation, validated as XML in CI.
+- [x] Final review of descriptions, regulatory tags, Table of Contents anchors, and `CHANGELOG.md` for `v1.0.0`.
 
 ## Milestone 5: Final Audit and Public Launch (`v1.0.0`)
 
-- [ ] Run end-to-end audit (`validate_readme.py`, `unittest`, `lgit`, `slopless`, live HTTP link check).
+- [x] Run end-to-end audit (`validate_readme.py`, `unittest`, `lgit`, `slopless`, live HTTP link check).
 - [ ] Switch repository visibility to public, configure repository metadata and topics, and cut release `v1.0.0`.

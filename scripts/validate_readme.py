@@ -360,6 +360,19 @@ def validate_markdown_text(
                 except json.JSONDecodeError as exc:
                     errors.append(ValidationError(0, f"invalid JSON in '{ex_file.name}': {exc}"))
 
+        svg_path = ROOT_DIR / "assets" / "compliance-lifecycle.svg"
+        if not svg_path.exists():
+            errors.append(ValidationError(0, "missing architectural diagram: assets/compliance-lifecycle.svg"))
+        else:
+            import xml.etree.ElementTree as ET
+
+            try:
+                ET.fromstring(svg_path.read_text(encoding="utf-8"))
+            except ET.ParseError as exc:
+                errors.append(ValidationError(0, f"invalid XML in assets/compliance-lifecycle.svg: {exc}"))
+            if "assets/compliance-lifecycle.svg" not in content:
+                errors.append(ValidationError(0, "README.md must embed assets/compliance-lifecycle.svg"))
+
     return errors
 
 

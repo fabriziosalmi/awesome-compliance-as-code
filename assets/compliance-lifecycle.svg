@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 310" width="100%" height="100%" role="img" aria-labelledby="title desc">
+  <title id="title">Compliance-as-Code Closed-Loop Architecture</title>
+  <desc id="desc">Four-stage engineering control loop mapping statutory regulations and machine-readable schemas to CI/CD policy gates, cryptographic supply-chain attestations, and continuous runtime evidence collection.</desc>
+  <defs>
+    <style>
+      .bg { fill: #0b1120; rx: 12px; }
+      .border { fill: none; stroke: #1e293b; stroke-width: 2; rx: 12px; }
+      .header { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 15px; font-weight: 700; fill: #f8fafc; letter-spacing: 0.6px; }
+      .sub { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; fill: #94a3b8; }
+      .card { fill: #111827; stroke-width: 1.5; rx: 8px; }
+      .c1 { stroke: #38bdf8; }
+      .c2 { stroke: #a855f7; }
+      .c3 { stroke: #f59e0b; }
+      .c4 { stroke: #10b981; }
+      .stage-num { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; }
+      .t1 { fill: #38bdf8; }
+      .t2 { fill: #c084fc; }
+      .t3 { fill: #fbbf24; }
+      .t4 { fill: #34d399; }
+      .stage-title { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 700; fill: #f1f5f9; }
+      .item { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; fill: #cbd5e1; }
+      .pill { fill: #1e293b; stroke: #334155; stroke-width: 1; rx: 4px; }
+      .pill-text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 10.5px; font-weight: 600; fill: #e2e8f0; text-anchor: middle; }
+      .arrow { stroke: #64748b; stroke-width: 1.8; fill: none; }
+      .feedback { stroke: #10b981; stroke-width: 1.5; stroke-dasharray: 5 4; fill: none; }
+      .feedback-label { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 10px; fill: #34d399; text-anchor: middle; }
+    </style>
+    <marker id="arrow-head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#10b981"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="2" y="2" width="956" height="306" rx="12"/>
+  <rect class="border" x="2" y="2" width="956" height="306" rx="12"/>
+
+  <text class="header" x="28" y="32">COMPLIANCE-AS-CODE: CONTINUOUS ENGINEERING CONTROL LOOP</text>
+  <text class="sub" x="28" y="50">Executable specifications, static CI gates, cryptographic provenance, and live runtime telemetry</text>
+
+  <!-- Stage 1 -->
+  <rect class="card c1" x="28" y="68" width="205" height="142" rx="8"/>
+  <text class="stage-num t1" x="42" y="88">01 / SPECS &amp; SCHEMAS</text>
+  <text class="stage-title" x="42" y="107">Machine-Readable</text>
+  <text class="item" x="42" y="130">• NIST OSCAL (SSP/SAR)</text>
+  <text class="item" x="42" y="148">• CycloneDX / SPDX</text>
+  <text class="item" x="42" y="166">• OpenVEX / CSAF / OSV</text>
+  <text class="item" x="42" y="184">• SLSA / in-toto / SARIF</text>
+  <text class="sub" x="42" y="201">JSON / YAML / XML / Protobuf</text>
+
+  <line class="arrow" x1="233" y1="139" x2="257" y2="139" marker-end="url(#arrow-head)"/>
+
+  <!-- Stage 2 -->
+  <rect class="card c2" x="260" y="68" width="205" height="142" rx="8"/>
+  <text class="stage-num t2" x="274" y="88">02 / STATIC &amp; CI GATES</text>
+  <text class="stage-title" x="274" y="107">Policy &amp; IaC Auditing</text>
+  <text class="item" x="274" y="130">• OPA Rego / Cedar / CUE</text>
+  <text class="item" x="274" y="148">• Checkov / Trivy / KICS</text>
+  <text class="item" x="274" y="166">• Semgrep / Gitleaks</text>
+  <text class="item" x="274" y="184">• Promptfoo / Garak (AI)</text>
+  <text class="sub" x="274" y="201">Pre-commit &amp; Pull Request</text>
+
+  <line class="arrow" x1="465" y1="139" x2="489" y2="139" marker-end="url(#arrow-head)"/>
+
+  <!-- Stage 3 -->
+  <rect class="card c3" x="492" y="68" width="205" height="142" rx="8"/>
+  <text class="stage-num t3" x="506" y="88">03 / SUPPLY CHAIN</text>
+  <text class="stage-title" x="506" y="107">Signing &amp; Admission</text>
+  <text class="item" x="506" y="130">• Syft / cdxgen / Grype</text>
+  <text class="item" x="506" y="148">• Sigstore Cosign / Rekor</text>
+  <text class="item" x="506" y="166">• SLSA Verifier / Witness</text>
+  <text class="item" x="506" y="184">• Kyverno / Gatekeeper</text>
+  <text class="sub" x="506" y="201">OCI Registry &amp; K8s Webhook</text>
+
+  <line class="arrow" x1="697" y1="139" x2="721" y2="139" marker-end="url(#arrow-head)"/>
+
+  <!-- Stage 4 -->
+  <rect class="card c4" x="724" y="68" width="208" height="142" rx="8"/>
+  <text class="stage-num t4" x="738" y="88">04 / RUNTIME &amp; EVIDENCE</text>
+  <text class="stage-title" x="738" y="107">Posture &amp; Attestation</text>
+  <text class="item" x="738" y="130">• Tetragon / Falco (eBPF)</text>
+  <text class="item" x="738" y="148">• OpenSCAP / InSpec / osquery</text>
+  <text class="item" x="738" y="166">• Steampipe / CloudQuery</text>
+  <text class="item" x="738" y="184">• Prowler / Lula / Trestle</text>
+  <text class="sub" x="738" y="201">Live State -&gt; OSCAL Evidence</text>
+
+  <!-- Continuous Feedback Loop -->
+  <path class="feedback" d="M 828 210 L 828 236 L 130 236 L 130 212" marker-end="url(#arrow-green)"/>
+  <text class="feedback-label" x="480" y="231">Automated Assessment Results &amp; Drift Reconciliation (OSCAL SAR / VEX / Telemetry)</text>
+
+  <!-- Regulatory Frameworks Bar -->
+  <rect class="pill" x="28" y="256" width="102" height="28" rx="4"/>
+  <text class="pill-text" x="79" y="274">[EU-CRA]</text>
+
+  <rect class="pill" x="142" y="256" width="102" height="28" rx="4"/>
+  <text class="pill-text" x="193" y="274">[NIS2]</text>
+
+  <rect class="pill" x="256" y="256" width="102" height="28" rx="4"/>
+  <text class="pill-text" x="307" y="274">[DORA]</text>
+
+  <rect class="pill" x="370" y="256" width="108" height="28" rx="4"/>
+  <text class="pill-text" x="424" y="274">[EU-AI-Act]</text>
+
+  <rect class="pill" x="490" y="256" width="102" height="28" rx="4"/>
+  <text class="pill-text" x="541" y="274">[GDPR]</text>
+
+  <rect class="pill" x="604" y="256" width="106" height="28" rx="4"/>
+  <text class="pill-text" x="657" y="274">[PCI-DSS]</text>
+
+  <rect class="pill" x="722" y="256" width="108" height="28" rx="4"/>
+  <text class="pill-text" x="776" y="274">[NIST-800-53]</text>
+
+  <rect class="pill" x="842" y="256" width="90" height="28" rx="4"/>
+  <text class="pill-text" x="887" y="274">[ISO-42001]</text>
+</svg>

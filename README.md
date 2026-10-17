@@ -4,6 +4,8 @@ A curated list of open-source Compliance-as-Code (CaC) specifications, policy en
 
 Compliance-as-Code translates statutory regulations, security baselines, and industry standards into machine-readable specifications, declarative policies, and automated verification gates. If a requirement cannot be validated via CLI, queried via API, or enforced in a deployment pipeline, it does not belong in this catalog.
 
+![Compliance-as-Code Closed-Loop Architecture](assets/compliance-lifecycle.svg)
+
 ## Contents
 
 - [1. Machine-Readable Formats & Data Protocols](#1-machine-readable-formats--data-protocols)
