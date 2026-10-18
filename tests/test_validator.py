@@ -114,6 +114,65 @@ class ValidatorTestSuite(unittest.TestCase):
         for lic in ALLOWED_LICENSES:
             self.assertIn(f"`{lic}`", contributing, f"CONTRIBUTING.md missing license {lic}")
 
+    def test_build_site_generates_valid_html_and_json(self) -> None:
+        import json
+        import pathlib
+        import tempfile
+        import xml.etree.ElementTree as ET
+        from scripts.build_site import build_site
+
+        with tempfile.TemporaryDirectory() as tmp:
+            out_dir = pathlib.Path(tmp)
+            catalog = build_site(output_dir=out_dir)
+            self.assertGreaterEqual(catalog["total_entries"], 620)
+            self.assertEqual(catalog["total_sections"], 9)
+            self.assertEqual(catalog["total_subsections"], 30)
+            self.assertEqual(len(catalog["matrix"]), 8)
+            self.assertEqual(len(catalog["examples"]), 4)
+            self.assertTrue((out_dir / "index.html").exists())
+            self.assertTrue((out_dir / "catalog.json").exists())
+            self.assertTrue((out_dir / "llms.txt").exists())
+            self.assertTrue((out_dir / "llms-full.txt").exists())
+            self.assertTrue((out_dir / "robots.txt").exists())
+            self.assertTrue((out_dir / "sitemap.xml").exists())
+            self.assertTrue((out_dir / ".nojekyll").exists())
+            self.assertTrue((out_dir / "assets" / "compliance-lifecycle.svg").exists())
+            self.assertTrue((out_dir / "examples" / "opa" / "cra_workloads.rego").exists())
+
+            parsed_json = json.loads((out_dir / "catalog.json").read_text(encoding="utf-8"))
+            self.assertEqual(parsed_json["total_entries"], catalog["total_entries"])
+
+            html_text = (out_dir / "index.html").read_text(encoding="utf-8")
+            self.assertIn("application/ld+json", html_text)
+            self.assertIn('class="entry-row"', html_text)
+            self.assertEqual(html_text.count('class="entry-row"'), catalog["total_entries"])
+
+            llms_txt = (out_dir / "llms.txt").read_text(encoding="utf-8")
+            self.assertTrue(llms_txt.startswith("# Awesome Compliance-as-Code"))
+            self.assertIn("catalog.json", llms_txt)
+            self.assertIn("llms-full.txt", llms_txt)
+
+            llms_full = (out_dir / "llms-full.txt").read_text(encoding="utf-8")
+            self.assertIn("## 1. Machine-Readable Formats & Data Protocols", llms_full)
+            self.assertIn("## Reference Implementations", llms_full)
+
+            sitemap_root = ET.fromstring((out_dir / "sitemap.xml").read_text(encoding="utf-8"))
+            self.assertTrue(sitemap_root.tag.endswith("urlset"))
+            self.assertEqual(len(list(sitemap_root)), 8)
+
+
+    def test_break_build_site_fails_on_invalid_readme(self) -> None:
+        import pathlib
+        import tempfile
+        from scripts.build_site import build_site
+
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = pathlib.Path(tmp)
+            bad_readme = tmp_path / "README.md"
+            bad_readme.write_text("# Wrong Header\n", encoding="utf-8")
+            with self.assertRaises(ValueError):
+                build_site(readme_path=bad_readme, output_dir=tmp_path / "_site", examples_dir=None)
+
 
 if __name__ == "__main__":
     unittest.main()

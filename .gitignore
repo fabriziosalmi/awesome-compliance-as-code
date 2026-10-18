@@ -19,3 +19,4 @@ Thumbs.db
 *.sarif
 self-scan.json
 .l0git.db*
+_site/

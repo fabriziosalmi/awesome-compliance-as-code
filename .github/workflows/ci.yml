@@ -26,7 +26,9 @@ jobs:
           python-version: "3.12"
 
       - name: Validate README structure and example synchronization
-        run: python3 scripts/validate_readme.py
+        run: |
+          python3 scripts/validate_readme.py
+          python3 scripts/build_site.py --output _site
 
       - name: Run validator unit and break tests
         run: python3 -m unittest discover -s tests -v
