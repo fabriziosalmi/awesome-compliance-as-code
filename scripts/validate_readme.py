@@ -133,7 +133,7 @@ def validate_markdown_text(
     content: str,
     *,
     examples_dir: pathlib.Path | None = EXAMPLES_DIR,
-    min_entries: int = 340,
+    min_entries: int = 620,
 ) -> list[ValidationError]:
     """Validate README.md content and return a list of structural or policy errors."""
     errors: list[ValidationError] = []
